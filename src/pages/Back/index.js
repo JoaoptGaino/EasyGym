@@ -17,9 +17,8 @@ export default function Back() {
     function navigateToMuscles() {
         navigation.navigate('Muscles');
     }
-    function handleClick(key,name) {
-        alert(key);
-        alert(name)
+    function handleClick(how) {
+        alert(how);
     }
     return (
         <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
@@ -32,7 +31,7 @@ export default function Back() {
                 <View style={styles.exercises}>
                     {
                         exercises.map((exer, i) => (
-                            <TouchableOpacity onPress={() => handleClick(i,exer.name)} key={i} style={styles.exerButton}>
+                            <TouchableOpacity onPress={() => handleClick(exer.howto)} key={i} style={styles.exerButton}>
                                 <Text style={styles.exerText}>{exer.name}</Text>
                             </TouchableOpacity>
                         ))
